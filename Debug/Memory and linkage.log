@@ -1,6 +1,3 @@
-﻿  fib.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Main.cpp
-Main.obj : error LNK2005: "int __cdecl fib(void)" (?fib@@YAHXZ) already defined in fib.obj
-C:\Users\kelsey.davis\Documents\Visual Studio 2015\Projects\Memory and linkage\Debug\Memory and linkage.exe : fatal error LNK1169: one or more multiply defined symbols found
+﻿  Main.cpp
+  Memory and linkage.vcxproj -> C:\Users\kelsey.davis\Documents\Visual Studio 2015\Projects\Memory and linkage\Debug\Memory and linkage.exe
+  Memory and linkage.vcxproj -> C:\Users\kelsey.davis\Documents\Visual Studio 2015\Projects\Memory and linkage\Debug\Memory and linkage.pdb (Partial PDB)

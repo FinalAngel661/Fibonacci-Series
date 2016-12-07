@@ -1,12 +1,41 @@
 #include <iostream>
-#include "fib.cpp"
+#include <cassert>
 
-int main()
+extern int fib(int);
+extern int fib_count;
+extern int fib_c(int);
+void ClearCache();
+
+void main()
 {
-	printf("Enter the number of terms of Fibonacci series you want");
+	ClearCache();
+
+	assert(fib_c(6) == 8);
+
+	assert(fib(5) == 5);
+	assert(fib(6) == 8);
+
+	fib_count = 0;
+
+	fib(6);
+	assert(fib_count == 25);
+
+	for (int i = 0; i < 1024; ++i)
+	{
+		fib_count = 0;
+		fib_c(i);
+		ClearCache();
+		printf("%d  %d\n\n", i, fib_count);
+
+
+	/*	fib_count = 0;
+		fib(i);
+		printf("%d  %d\n",i,fib_count);*/
+	}
+	/*printf("Enter the number of terms of Fibonacci series you want");
 	printf_s(" %n ", n);
 	printf("First %n ");
-	printf(" terms of Fibonacci series are :- ");
+	printf(" terms of Fibonacci series are :- ");*/
 
-	getchar;
+	getchar();
 };

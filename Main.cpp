@@ -4,11 +4,11 @@
 extern int fib(int);
 extern int fib_count;
 extern int fib_c(int);
-void ClearCache();
+void ClearCache(size_t);
 
 void main()
 {
-	ClearCache();
+	ClearCache(10);
 
 	assert(fib_c(6) == 8);
 
@@ -19,12 +19,11 @@ void main()
 
 	fib(6);
 	assert(fib_count == 25);
-
-	for (int i = 0; i < 1024; ++i)
+	ClearCache(100000);
+	for (int i = 0; i < 100000; ++i)
 	{
 		fib_count = 0;
 		fib_c(i);
-		ClearCache();
 		printf("%d  %d\n\n", i, fib_count);
 
 
@@ -37,5 +36,6 @@ void main()
 	printf("First %n ");
 	printf(" terms of Fibonacci series are :- ");*/
 
-	getchar();
+	ClearCache(0);
+	system("pause");
 };

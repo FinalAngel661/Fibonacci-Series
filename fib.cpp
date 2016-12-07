@@ -32,11 +32,20 @@ int fib(int n)
 	//return 0;
 }
 
-static int cache[1024];
+static int *cache;
 
-void ClearCache()
+void ClearCache(size_t size)
 {
-	memset(cache, 0, 1024 * sizeof(int));
+	if (cache != nullptr)
+		delete[] cache;
+	do
+	{
+		cache = new int[size/=2];
+	} while (cache != nullptr);
+	{
+		memset(cache, 0, size * sizeof(int));
+	}
+	
 }
 
 int fib_c(int n)
